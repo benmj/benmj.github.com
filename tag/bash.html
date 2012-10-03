@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ben by Ben Jacobs</title>
+    <meta name="description" content="">
+    <meta name="author" content="Ben Jacobs">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src=".././theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href=".././theme/bootstrap.min.css" rel="stylesheet">
+    <link href=".././theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href=".././theme/local.css" rel="stylesheet">
+    <link href=".././theme/pygments.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="../.">Ben by Ben Jacobs</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+        
+            
+        
+        
+            <li><a href=".././pages/about.html">About</a></li>
+        
+        
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+                
+
+
+        
+
+
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href=".././scripting-permission-changes-for-pelican.html"><h1>Scripting Permission Changes for Pelican</h1></a>
+            Wed 03 October 2012
+
+
+by <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+ 
+
+
+
+ 
+        </div>
+        
+        <div><p>I'm not a frequent blogger. To date, this is my second blog post. But this doesn't mean that I don't enjoy toying around with different blogging and publishing software. Last week, I decided to move my Wordpress blog to the static blogging software <a href="http://www.getpelican.com">Pelican</a>. After looking around at the guts of Wordpress, I was turned off by its complexity. I also really really really wanted to be able to edit posts offline and in my own <a href="http://www.sublimetext.com">editor</a>.</p>
+<p>Pelican comes with a pretty robust Makefile that can recompile and upload your website via SSH. I ran into a small issue with my Godaddy account, in which all new files and folders were unreadable because of permission issues. The files needed to be readable by all users on the server and the folders needed to be executable by all users. I wrote a little bash script called <strong>permissions.sh</strong> and uploaded it to my server.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c">#!/bin/bash</span>
+<span class="c"># permissions.sh</span>
+
+find ./ -type d | xargs chmod a+x
+chmod -R a+r *
+</pre></div>
+</td></tr></table>
+
+<p>The new "trick" for me was the <strong>find -type d</strong> to only list directories. I then added the following line to my Pelican Makefile under the <strong>ssh_upload</strong> section:</p>
+<div class="codehilite"><pre><span class="n">ssh</span> $<span class="p">(</span><span class="n">SSH_USER</span><span class="p">)@</span>$<span class="p">(</span><span class="n">SSH_HOST</span><span class="p">)</span> <span class="o">./</span><span class="n">permissions</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+
+
+<p>Works great! <s>The only issue is that I have to type my twice, once for the SCP transfer and once for the SSH command. I'll look around and see if there are any ways to store these credentials for a tiny moment in time. If not, typing the password twice is a small price to pay for not having to remotely log into the server every time I make a change.</s></p>
+<p>As soon as I uploaded the last paragraph (dutifully entering my password twice), I decided to search around for a way to authenticate the connection between my computer and the server without the passwords. I found <a href="http://www.linuxproblem.org/art_9.html">this little jewel</a> and it works even better. Vive le unix.</p></div>
+        <hr />
+    </div>
+		
+    
+        <div class="pagination">
+<ul>
+
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+
+
+
+    <li class="active"><a href=".././tag/bash.html">1</a></li>
+
+
+
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
+
+
+</ul>
+</div>
+    
+
+
+ 
+
+ 
+ 
+
+
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href=".././archives.html">Archives</a>
+                <li><a href=".././tags.html">Tags</a>
+                <li><a href=".././" rel="alternate">Atom feed</a></li>
+                
+            </ul>
+            </div>
+
+
+            
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                
+                <li><a href=".././category/blog.html">blog</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+
+            
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+            
+                <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+            
+                <li><a href="http://python.org">Python.org</a></li>
+            
+            </ul>
+            </div>
+            
+
+
+            
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                
+                <li><a href="http://twitter.com/benmjacobs">twitter</a></li>
+                
+                <li><a href="https://www.facebook.com/benmillerjacobs">facebook</a></li>
+                
+                <li><a href="http://stackoverflow.com/users/994466/bpmj">stackoverflow</a></li>
+                
+            </ul>
+            </div>
+            </div>
+            
+
+        </div>  
+    </div> 
+    </div> 
+
+<footer>
+<br />
+<p><a href="../.">Ben by Ben Jacobs</a> &copy; Ben Jacobs 2012</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+ 
+</body>
+</html>
