@@ -55,46 +55,37 @@
 
         <div class="span9">
         
-
-<h1>Archives</h1>
-
-<table class="table">
-    <tbody>
-    
-        <tr>
-        <td>11 Oct 2012</td>
-        <td><a href='programming-motherfucker.html'>Programming Motherfucker</a></td>
-        </tr>
-    
-        <tr>
-        <td>03 Oct 2012</td>
-        <td><a href='a-better-bucket.html'>A Better Bucket</a></td>
-        </tr>
-    
-        <tr>
-        <td>07 Sep 2012</td>
-        <td><a href='laptimer-posted-to-github.html'>LapTimer Posted to GitHub</a></td>
-        </tr>
-    
-        <tr>
-        <td>04 Sep 2012</td>
-        <td><a href='reusable-lap-timer-for-ios.html'>Reusable Lap Timer for iOS</a></td>
-        </tr>
-    
-        <tr>
-        <td>21 Aug 2012</td>
-        <td><a href='scripting-permission-changes-for-pelican.html'>Scripting Permission Changes for Pelican</a></td>
-        </tr>
-    
-        <tr>
-        <td>24 Jun 2012</td>
-        <td><a href='first-post.html'>First Post</a></td>
-        </tr>
-    
-    </tbody>
-</table>
+    <div class='article'>
+        <div class="content-title">
+            <h1>Reusable Lap Timer for iOS</h1>
+            Tue 04 September 2012
 
 
+by <a class="url fn" href="./author/ben-jacobs.html">Ben Jacobs</a>
+ 
+
+
+
+
+        </div>
+	
+        <div><p>The other day I needed to insert a Lap Timer into an existing iPhone application. Being the lazy programmer that I am, I first searched around online to see if anyone had already written a clean, reusable Lap Timer, but there was nothing. iDevices ship with the clock app, which includes a stopwatch function. I set about imitating its look and functionality.</p>
+<p><img alt="LapTimer Screenshot" src="static/images/LapTimer.png" /></p>
+<p>Some specs about LapTimer:</p>
+<ul>
+<li>Uses <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/nsdate_Class/Reference/Reference.html">NSDate</a> to store accurate times.</li>
+<li>Uses <a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Reference/Foundation/Classes/NSTimer_Class/Reference/NSTimer.html">NSTimer</a> to refresh the labels on a millisecond basis, so you get to see those fun numbers counting up into infinity</li>
+<li>Creates a <em>LapTimerProtocol</em>, which an app could use to get "return values" from the LapTimerController</li>
+</ul>
+<p>If all that sounds like fun, feel free to download the source and play around with it. The source code is offered without warranty or copyright. Do whatever you'd like with it. I make use of the <a href="http://www.mlsite.net/blog/?p=232">UIButtonGlossy Class</a> written by Michael Heyeck.</p>
+<p><a href="static/images/LapTimer.zip">Download LapTimer</a></p></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+	
+	
+    </div>
 
         </div>
         

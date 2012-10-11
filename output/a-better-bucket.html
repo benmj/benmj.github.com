@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Ben by Ben Jacobs</title>
+    <meta name="description" content="">
+    <meta name="author" content="Ben Jacobs">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="./theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="./theme/bootstrap.min.css" rel="stylesheet">
+    <link href="./theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="./theme/local.css" rel="stylesheet">
+    <link href="./theme/pygments.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href=".">Ben by Ben Jacobs</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+        
+            
+        
+        
+            <li><a href="./pages/about.html">About</a></li>
+        
+        
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+    <div class='article'>
+        <div class="content-title">
+            <h1>A Better Bucket</h1>
+            Wed 03 October 2012
+
+
+by <a class="url fn" href="./author/ben-jacobs.html">Ben Jacobs</a>
+ 
+
+
+
+
+        </div>
+	
+        <div><h2>Or: a fantastic journey of exploration and discovery</h2>
+<h4>Or: A Single-Post blog entry platform</h4>
+<p>The other day, I was thinking about the gulf in ways to publish content to the web. On the one hand, there's Twitter or Facebook. These both offer easy, yet ephemeral ways, to share content. Facebook has its "notes," but these are ugly and don't seem to be used very much (at least in my circles). At the other extreme, there are blogs. Anyone can set one up, and with all the free templates that are available, it's pretty easy for the average user to come up with something decent looking. The problem with blogs is that unless you're actively cultivating them, they can get stale pretty quickly. I've run across numerous blogs that have a post or two that are years old and then just drop off (I've seen this called "blog rot"). I've also seen people create blogs for the express purpose of posting one or two things. Back in the glorious days of Google Buzz, I had a friend create a blog so he could write one long post that felt too cramped on our feed. What is someone to do if they want write something, quickly publish it, and distribute the link?</p>
+<p>Those in the coder/hacker community are probably familiar with <a href="http://www.pastebucket.com/">PasteBucket</a> and other similar services. These can be used to quickly publish snippets of computer code, and they're mostly used for sharing more than would be appropriate in a forumn or IRC channel. These sites are great for this purpose, but they had some downfalls:</p>
+<ol>
+<li>They're geared exclusively toward computer code</li>
+<li>They're rather ugly</li>
+<li>Oh yeah... they have ads.</li>
+</ol>
+<p>While discussing my single-post blog idea online the other day, <a href="https://twitter.com/carljm">@carljm</a> turned me on to <a href="http://gist.io/">Gist.io</a>. This is a visually attractive project that lets one take a MarkDown file stored on <a href="http://www.github.com">Github</a> and render it to an HTML page. The author, Idan Gazit, also has a lovely description of why quick-and-dirty publishing services like this are useful:</p>
+<blockquote>
+<p>Sometimes, we just want to share a bit of writing that is neither. Maybe we want to write for a specific audience, but don’t want to address the people who usually read our blogs. Maybe it’s just something that doesn’t fit into 140 characters.</p>
+<p>For these situations, even setting up a Tumblr seems like too much effort. Pastebins are great, but the reading experience sucks in general, and particularly on mobile devices.</p>
+</blockquote>
+<p>This seems like a cool service, but, even though it's aethetics are better than PasteBucket et al., it still has a hacker focus. Who else uses Github? </p>
+<p>So, I decided to write something. When I started to think about it, I realized this was about the simplest web-app project imaginable for a variety of reasons:</p>
+<ol>
+<li>I wanted to keep it anonymous, so I didn't need to worry about any account information. In fact, I didn't want to cache ANY user informat</li>
+<li>Open-source libraries already existed for quck and dirty text/MarkDown editors</li>
+<li>Open-source libraries already existed for makeing quick and attractive pages</li>
+</ol>
+<p>So, I set about the task.</p>
+<h2>Project's Philosophy:</h2>
+<ol>
+<li>Fast</li>
+<li>Elegant (aesthetically, although also internally)</li>
+<li>Easy for anyone</li>
+<li>Anonymous (because who the hell needs <em>another</em> online account)</li>
+</ol>
+<h2>Process Process Process</h2>
+<p>It had been a little while since I'd coded a web app, and there were some things that I'd been meaning to try out: notabely the <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> and <a href="static/nodejs.org">NodeJS</a>. </p>
+<p>The last time I wrote a web app, it needed to interact with a database on a server different than the webserver. So, I naturally set about using this architecture (w/o thinking too much). I whipped up some front-end scripts for posting and querying via jQuery AJAX calls. It worked. It was ugly.</p>
+<p>Then, I ran across <a href="http://expressjs.com/">ExpressJS</a>. Ah! A lovely system. I re-worked my app to serve static .html pages in almost all instances and to rely on some of the light-weight templating that comes with Express when it couldn't.</p>
+<p>The result is a good first start, and I'm rather proud of it. An experienced developer would probably smirk at how long it took me to get some of this <em>very</em> basic stuff up and running, but I keep telling myself that I've only been messing with Bootstrap/Node/Express for a few days.</p>
+<h2>Can I see it?</h2>
+<p>I'm afraid I haven't deployed it yet. If you want to try it for yourself, you'll have to download it and run it. If you have command line acces and already have Node installed, you can do the following:</p>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">benmj</span><span class="o">/</span><span class="n">betterpaste</span><span class="p">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">betterpaste</span>
+<span class="n">npm</span> <span class="n">install</span>
+<span class="n">node</span> <span class="n">app</span><span class="p">.</span><span class="n">js</span>
+</pre></div>
+
+
+<p>The server will start running on your computer at port 3000. In the near future, I hope to find a place where I can deploy this. I was hoping Heroku would let me, but I see that they discourage relying upon the filesystem for storage. I might look into a light-weight, NoSQL, solution. If you have any recommendations, let me know.</p></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+	
+	
+    </div>
+
+        </div>
+        
+        <div class="span3">
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="./archives.html">Archives</a>
+                <li><a href="./tags.html">Tags</a>
+                <li><a href="./" rel="alternate">Atom feed</a></li>
+                
+            </ul>
+            </div>
+
+
+            
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                
+                <li><a href="./category/blog.html">blog</a></li>
+                                   
+            </ul>
+            </div>
+            
+
+
+            
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+            
+                <li><a href="http://docs.notmyidea.org/alexis/pelican/">Pelican</a></li>
+            
+                <li><a href="http://python.org">Python.org</a></li>
+            
+            </ul>
+            </div>
+            
+
+
+            
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                
+                <li><a href="http://twitter.com/benmjacobs">twitter</a></li>
+                
+                <li><a href="https://www.facebook.com/benmillerjacobs">facebook</a></li>
+                
+                <li><a href="http://stackoverflow.com/users/994466/bpmj">stackoverflow</a></li>
+                
+            </ul>
+            </div>
+            </div>
+            
+
+        </div>  
+    </div> 
+    </div> 
+
+<footer>
+<br />
+<p><a href=".">Ben by Ben Jacobs</a> &copy; Ben Jacobs 2012</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap-collapse.js"></script>
+
+ 
+</body>
+</html>

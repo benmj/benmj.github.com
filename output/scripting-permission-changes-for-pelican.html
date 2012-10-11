@@ -55,46 +55,48 @@
 
         <div class="span9">
         
-
-<h1>Archives</h1>
-
-<table class="table">
-    <tbody>
-    
-        <tr>
-        <td>11 Oct 2012</td>
-        <td><a href='programming-motherfucker.html'>Programming Motherfucker</a></td>
-        </tr>
-    
-        <tr>
-        <td>03 Oct 2012</td>
-        <td><a href='a-better-bucket.html'>A Better Bucket</a></td>
-        </tr>
-    
-        <tr>
-        <td>07 Sep 2012</td>
-        <td><a href='laptimer-posted-to-github.html'>LapTimer Posted to GitHub</a></td>
-        </tr>
-    
-        <tr>
-        <td>04 Sep 2012</td>
-        <td><a href='reusable-lap-timer-for-ios.html'>Reusable Lap Timer for iOS</a></td>
-        </tr>
-    
-        <tr>
-        <td>21 Aug 2012</td>
-        <td><a href='scripting-permission-changes-for-pelican.html'>Scripting Permission Changes for Pelican</a></td>
-        </tr>
-    
-        <tr>
-        <td>24 Jun 2012</td>
-        <td><a href='first-post.html'>First Post</a></td>
-        </tr>
-    
-    </tbody>
-</table>
+    <div class='article'>
+        <div class="content-title">
+            <h1>Scripting Permission Changes for Pelican</h1>
+            Tue 21 August 2012
 
 
+by <a class="url fn" href="./author/ben-jacobs.html">Ben Jacobs</a>
+ 
+
+
+
+
+        </div>
+	
+        <div><p>I'm not a frequent blogger. To date, this is my second blog post. But this doesn't mean that I don't enjoy toying around with different blogging and publishing software. Last week, I decided to move my Wordpress blog to the static blogging software <a href="http://www.getpelican.com">Pelican</a>. After looking around at the guts of Wordpress, I was turned off by its complexity. I also really really really wanted to be able to edit posts offline and in my own <a href="http://www.sublimetext.com">editor</a>.</p>
+<p>Pelican comes with a pretty robust Makefile that can recompile and upload your website via SSH. I ran into a small issue with my Godaddy account, in which all new files and folders were unreadable because of permission issues. The files needed to be readable by all users on the server and the folders needed to be executable by all users. I wrote a little bash script called <strong>permissions.sh</strong> and uploaded it to my server.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span class="c">#!/bin/bash</span>
+<span class="c"># permissions.sh</span>
+
+find ./ -type d | xargs chmod a+x
+chmod -R a+r *
+</pre></div>
+</td></tr></table>
+
+<p>The new "trick" for me was the <strong>find -type d</strong> to only list directories. I then added the following line to my Pelican Makefile under the <strong>ssh_upload</strong> section:</p>
+<div class="codehilite"><pre><span class="n">ssh</span> $<span class="p">(</span><span class="n">SSH_USER</span><span class="p">)@</span>$<span class="p">(</span><span class="n">SSH_HOST</span><span class="p">)</span> <span class="o">./</span><span class="n">permissions</span><span class="p">.</span><span class="n">sh</span>
+</pre></div>
+
+
+<p>Works great! <s>The only issue is that I have to type my twice, once for the SCP transfer and once for the SSH command. I'll look around and see if there are any ways to store these credentials for a tiny moment in time. If not, typing the password twice is a small price to pay for not having to remotely log into the server every time I make a change.</s></p>
+<p>As soon as I uploaded the last paragraph (dutifully entering my password twice), I decided to search around for a way to authenticate the connection between my computer and the server without the passwords. I found <a href="http://www.linuxproblem.org/art_9.html">this little jewel</a> and it works even better. Vive le unix.</p></div>
+	
+        <hr>
+    	   
+        <h2>Comments</h2>
+	
+	
+    </div>
 
         </div>
         
