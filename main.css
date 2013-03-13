@@ -1,0 +1,204 @@
+@import url("../font/ss-social-regular.css");
+@import url(http://fonts.googleapis.com/css?family=Arvo:700|PT+Sans:400,700,400italic);
+/*
+    Theme Name: mnmlist
+    Theme URI: http://mathieu.agopian.info/mnmlist/theme.html
+    Description: Theme adapted from http://mnmlist.com/theme/ from Leo Babauta, a very clean minimalist theme, without comments, search, archives or other features.
+    Author: Mathieu Agopian
+    Autor URI: http://mathieu.agopian.info
+
+    This theme is uncopyrighted, free, and offered as is.
+*/
+/* line 20, ../../../templates/mnmlist/compass/src/main.scss */
+body {
+  background: #fff;
+  background: url("../images/cream_dust.png");
+  color: #333;
+  font: 20px "PT Sans", bodyfont, serif;
+  line-height: 30px;
+  max-width: 30em;
+  margin: 60px 14px 0 64px;
+}
+
+/* line 36, ../../../templates/mnmlist/compass/src/main.scss */
+h1 {
+  color: #333333;
+  font-family: "Arvo", serif;
+  font-size: 1.5em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+/* line 42, ../../../templates/mnmlist/compass/src/main.scss */
+h2 {
+  color: #666666;
+  font-family: "Arvo", serif;
+  font-size: 1.3em;
+}
+
+/* line 46, ../../../templates/mnmlist/compass/src/main.scss */
+h3 {
+  color: #666666;
+  font-family: "Arvo", serif;
+  font-size: 1em;
+}
+
+/* line 50, ../../../templates/mnmlist/compass/src/main.scss */
+h4 {
+  color: #666666;
+  font-family: "Arvo", serif;
+  font-size: 0.9em;
+}
+
+/* line 54, ../../../templates/mnmlist/compass/src/main.scss */
+nav {
+  text-align: right;
+}
+/* line 56, ../../../templates/mnmlist/compass/src/main.scss */
+nav ul {
+  list-style: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+/* line 61, ../../../templates/mnmlist/compass/src/main.scss */
+nav li {
+  display: inline;
+  margin-left: 20px;
+}
+/* line 65, ../../../templates/mnmlist/compass/src/main.scss */
+nav a {
+  border-bottom: none;
+}
+
+/* line 70, ../../../templates/mnmlist/compass/src/main.scss */
+time {
+  color: #c0c0c0;
+}
+
+/* line 74, ../../../templates/mnmlist/compass/src/main.scss */
+img {
+  border: none;
+}
+
+/* line 78, ../../../templates/mnmlist/compass/src/main.scss */
+blockquote {
+  border-left: 4px solid #a5abab;
+  margin: 0px;
+  padding: 0 12px 0 12px;
+}
+
+/* line 84, ../../../templates/mnmlist/compass/src/main.scss */
+p {
+  line-height: 25px;
+  margin: 25px auto;
+  text-indent: 0px;
+}
+/* line 88, ../../../templates/mnmlist/compass/src/main.scss */
+p.caption {
+  font-size: 80%;
+  margin-top: 0;
+}
+
+/* line 94, ../../../templates/mnmlist/compass/src/main.scss */
+a {
+  border-bottom: #999999 1px solid;
+  color: #303030;
+  text-decoration: none;
+}
+/* line 98, ../../../templates/mnmlist/compass/src/main.scss */
+a:hover {
+  color: #999;
+}
+
+/* line 103, ../../../templates/mnmlist/compass/src/main.scss */
+ul li, ol li {
+  line-height: 30px;
+  padding: 6px 0 0 0;
+}
+
+/* line 109, ../../../templates/mnmlist/compass/src/main.scss */
+strong {
+  color: #555555;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+/* line 115, ../../../templates/mnmlist/compass/src/main.scss */
+tt, pre {
+  background-color: #fafafa;
+  font-family: Inconsolata, Monaco, monospace;
+  line-height: 1.2em;
+}
+
+/* line 121, ../../../templates/mnmlist/compass/src/main.scss */
+pre {
+  font-size: 0.8em;
+  overflow: auto;
+  padding: 10px;
+}
+
+/* line 127, ../../../templates/mnmlist/compass/src/main.scss */
+header {
+  padding-bottom: 20px;
+}
+/* line 129, ../../../templates/mnmlist/compass/src/main.scss */
+header a {
+  border-bottom: none;
+}
+/* line 131, ../../../templates/mnmlist/compass/src/main.scss */
+header a#page-title {
+  font-weight: bold;
+}
+
+/* line 135, ../../../templates/mnmlist/compass/src/main.scss */
+#article-list {
+  margin-top: 100px;
+}
+/* line 137, ../../../templates/mnmlist/compass/src/main.scss */
+#article-list ol li {
+  line-height: 1.2em;
+  list-style-type: none;
+  padding-bottom: 10px;
+}
+
+/* line 144, ../../../templates/mnmlist/compass/src/main.scss */
+footer {
+  color: #666;
+  font-size: 16px;
+}
+/* line 147, ../../../templates/mnmlist/compass/src/main.scss */
+footer a {
+  border-bottom: none;
+  color: #333;
+}
+/* line 152, ../../../templates/mnmlist/compass/src/main.scss */
+footer ul {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+/* line 153, ../../../templates/mnmlist/compass/src/main.scss */
+footer ul a {
+  color: #c0c0c0;
+}
+/* line 159, ../../../templates/mnmlist/compass/src/main.scss */
+footer li {
+  display: inline;
+  padding-left: 25px;
+}
+/* line 163, ../../../templates/mnmlist/compass/src/main.scss */
+footer p {
+  margin-top: 10px;
+}
+
+/* line 168, ../../../templates/mnmlist/compass/src/main.scss */
+#site-title {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* line 174, ../../../templates/mnmlist/compass/src/main.scss */
+#about_image {
+  float: left;
+  padding: 0 25px 25px;
+}
