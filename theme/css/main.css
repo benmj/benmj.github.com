@@ -194,23 +194,28 @@ footer li {
   display: inline;
   padding-left: 25px;
 }
-/* line 164, ../../compass/src/main.scss */
+/* line 163, ../../compass/src/main.scss */
+footer li a {
+  color: #c0c0c0;
+}
+/* line 165, ../../compass/src/main.scss */
 footer li a:hover {
+  color: #666;
   font-size: 115%;
 }
-/* line 170, ../../compass/src/main.scss */
+/* line 171, ../../compass/src/main.scss */
 footer p {
   margin-top: 10px;
 }
 
-/* line 181, ../../compass/src/main.scss */
+/* line 182, ../../compass/src/main.scss */
 #site-title {
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: none;
 }
 
-/* line 187, ../../compass/src/main.scss */
+/* line 188, ../../compass/src/main.scss */
 #about_image {
   float: left;
   padding: 0 25px 25px;
