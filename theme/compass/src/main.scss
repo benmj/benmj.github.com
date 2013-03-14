@@ -1,0 +1,190 @@
+/*
+    Theme Name: mnmlist
+    Theme URI: http://mathieu.agopian.info/mnmlist/theme.html
+    Description: Theme adapted from http://mnmlist.com/theme/ from Leo Babauta, a very clean minimalist theme, without comments, search, archives or other features.
+    Author: Mathieu Agopian
+    Autor URI: http://mathieu.agopian.info
+
+    This theme is uncopyrighted, free, and offered as is.
+*/
+
+@import "susy";
+@import url("../font/ss-social-regular.css");
+@import url(http://fonts.googleapis.com/css?family=Arvo:700|PT+Sans:400,700,400italic);
+
+$total-columns  : 6;             // a 12-column grid
+$column-width   : 5em;            // each column is 4em wide
+$gutter-width   : 1em;            // 1em gutters between columns
+$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+
+body {
+    background: #fff; 
+    background: url('../images/cream_dust.png');
+    color: #333;
+    font: 20px 'PT Sans', bodyfont, serif;
+    line-height: 30px;
+}
+
+.page {
+    @include container;
+    // @include susy-grid-background;
+}
+
+@mixin heading ($font-size, $color: #666) {
+    color: $color;
+    font-family: 'Arvo', serif; 
+    font-size: $font-size;
+}
+
+h1 {
+    @include heading(1.5em, #333);
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+h2 {
+    @include heading(1.3em);
+}
+
+h3 {
+    @include heading(1em);
+}
+
+h4 {
+    @include heading(0.9em);
+}
+
+nav {
+    ul {
+        list-style: none;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    li {
+        display: inline;
+        margin-left: 20px;
+    }
+    a {
+        border-bottom: none;
+    }
+}
+
+time {
+    color: #c0c0c0;
+}
+
+img {
+    border: none;
+}
+
+blockquote {
+    border-left: 4px solid #A5ABAB;
+    margin:0px;
+    padding:0 12px 0 12px;
+}
+
+p {
+    line-height: 25px;
+    margin:25px auto;
+    text-indent: 0px;
+    &.caption {
+        font-size: 80%;
+        margin-top: 0;
+    }
+}
+
+a {
+    border-bottom: #999 1px solid;
+    color: #303030;
+    text-decoration: none;
+    &:hover { color: #999; }
+}
+
+ul, ol {
+    // padding: .5em 0em 1em 3.2em;
+    li {
+        line-height: 30px;
+        padding: 6px 0 0 0;
+    }
+}
+
+strong {
+    color: #555555;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+tt, pre {
+    background-color: #fafafa;
+    font-family: Inconsolata, Monaco, monospace;
+    line-height: 1.2em;
+}
+
+pre {
+    font-size: 0.8em;
+    overflow: auto;
+    padding: 10px;
+}
+
+header {
+    padding-bottom: 20px;
+    a {
+        border-bottom: none;
+        &#page-title { font-weight: bold; }
+    }
+}
+
+#article-list {
+    margin-top: 100px;
+    ol li {
+        line-height: 1.2em;
+        list-style-type: none;
+        padding-bottom: 10px;
+    }
+}
+
+footer {
+    color: #666;
+    font-size:16px;
+//    background: url('../images/mochaGrunge.png');
+    padding: 25px;
+    border-radius: 10px;
+    a {
+        border-bottom: none;
+		color: #333;
+    }
+    ul {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    li {
+        display: inline;
+        padding-left: 25px;
+        a {
+            &:hover {
+                font-size: 115%;                
+              //  color: #c0c0c0;
+            }
+        }
+    }
+    p {
+        margin-top: 10px;
+
+        a {
+            &:hover {
+
+            }
+        }
+    }
+}
+
+#site-title {
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+#about_image {
+    float: left;
+    padding: 0 25px 25px;
+}
