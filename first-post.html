@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Ben by Ben Jacobs : First Post</title>
+        <title>First Post</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
-        <link href="./" type="application/atom+xml" rel="alternate" title="Ben by Ben Jacobs ATOM Feed" />
         
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+        
+        
+
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -18,63 +21,77 @@
 
 </head>
 
-<body>
-    <h1 role="banner">
-        <a href="." id="site-title">
-            Ben by Ben Jacobs         </a>
-    </h1>
+<body id="index" class="home">
 
-    <nav role="navigation">
-        <ul>
-            <li><a href="./pages/about.html">about</a></li>
-            <li><a href="./pages/projects.html">projects</a></li>
-            <li><a href="./archives.html">blog</a></li>
-        </ul>
-    </nav>
-
+        <header id="banner" class="body">
+                <h1><a href=".">A Pelican Blog </a></h1>
+                <nav><ul>
                 
-<header>
-    <h1><a href="." id="site-title">Ben by Ben Jacobs </a> :
-        <a href="./first-post.html" id="page-title">First Post</a></h1>
-    <time datetime="2012-06-24T00:00:00">Sun 24 June 2012</time></header>
-<article>
-    <p>I have been inspired… and that led me here.</p>
+                
+                
+                    <li><a href="./pages/about.html">About</a></li>
+                
+                    <li><a href="./pages/projects.html">Projects</a></li>
+                
+                    <li><a href="./pages/resume.html">Resumé</a></li>
+                
+                
+                
+                    <li class="active"><a href="./category/blog.html">blog</a></li>
+                
+                </ul></nav>
+        </header><!-- /#banner -->
+        
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="first-post.html" rel="bookmark"
+           title="Permalink to First Post">First Post</a></h1>
+      
+    </header>
+
+    <div class="entry-content">
+      <footer class="post-info">
+        <abbr class="published" title="2012-06-24T00:00:00">
+                Sun 24 June 2012
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href="./author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href="./category/blog.html">blog</a>. </p>
+<p>tags: <a href="./tag/personal.html">personal</a><a href="./tag/code.html">code</a></p>
+
+
+</footer><!-- /.post-info -->
+      <p>I have been inspired… and that led me here.</p>
 <p>I bought this domain a few months ago. I knew I needed a little corner of the net to call my own: a place to write a thought or two or share a cool hack. I aspire to create/contribute to more open source projects, and whenever that happens I’ll need space to discuss it. Still, I sat on the domain–too lethargic to even click the “configure wordpress” button.</p>
 <p>Yesterday, I attended the <a href="http://59daysofcode.com/">59 Days of Code</a>. “Damn,” I thought, “there’s a ton of ideas and energy out there. I better get going.”</p>
 <p>Here we are. Stay posted.</p>
-</article>
+    </div><!-- /.entry-content -->
+    
 
-        <footer>
-            <ul>
-                <li>
-                    <a href="http://www.github.com/benmj">
-                        <i class="ss-octocat"></i> Github
-                    </a>
-                </li>
-                <li>
-                    <a href="http://twitter.com/benmjacobs">
-                        <i class="ss-twitter"></i> Twitter
-                    </a>
-                </li>
-                <li>
-                    <a href="http://stackoverflow.com/users/994466/bpmj">
-                        <i class="ss-stackoverflow"></i> Stack Overflow
-                    </a>
-                </li>
-                <li>
-                    <a href="www.linkedin.com/pub/ben-jacobs/34/1b5/525/">
-                        <i class="ss-linkedin"></i> Linked In
-                    </a>
-                </li>
-            </ul>
+  </article>
+</section>
 
-            <p>
-                This site was created Using <a href="http://blog.getpelican.com/">Pelican</a>, a static blog generator written in Python. It makes use of <a href="http://subtlepatterns.com/">Subtle Patterns</a> and <a>Symbolset</a>. All text and markup/down was lovingly written in <a href="http://www.sublimetext.com">Sublime Text 2</a>.
-            </p>
-            <p>
-                Copyright 2012-2013 by Ben Jacobs.
-            </p>
-        </footer>
+        <section id="extras" class="body">
+        
+        
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+
+
 
 </body>
 </html>

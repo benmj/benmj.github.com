@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Ben by Ben Jacobs - geeky</title>
+        <title>A Pelican Blog - geeky</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
-        <link href="../" type="application/atom+xml" rel="alternate" title="Ben by Ben Jacobs ATOM Feed" />
+        <link rel="stylesheet" href=".././theme/css/main.css" type="text/css" />
         
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+        
+        
+
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
-                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie.css"/>
+                <script src=".././js/IE8.js" type="text/javascript"></script><![endif]-->
 
         <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie6.css"/><![endif]-->
 
 </head>
 
-<body>
-    <h1 role="banner">
-        <a href=".." id="site-title">
-            Ben by Ben Jacobs         </a>
-    </h1>
+<body id="index" class="home">
 
-    <nav role="navigation">
-        <ul>
-            <li><a href="../pages/about.html">about</a></li>
-            <li><a href="../pages/projects.html">projects</a></li>
-            <li><a href="../archives.html">blog</a></li>
-        </ul>
-    </nav>
-
+        <header id="banner" class="body">
+                <h1><a href="../.">A Pelican Blog </a></h1>
+                <nav><ul>
                 
+                
+                
+                    <li><a href=".././pages/about.html">About</a></li>
+                
+                    <li><a href=".././pages/projects.html">Projects</a></li>
+                
+                    <li><a href=".././pages/resume.html">Resumé</a></li>
+                
+                
+                
+                    <li ><a href=".././category/blog.html">blog</a></li>
+                
+                </ul></nav>
+        </header><!-- /#banner -->
+                
+
             
 
-                            <header>
-                    <h1><a href="../scripting-permission-changes-for-pelican.html" id="page-title">Scripting Permission Changes for Pelican</a></h1>
-                <time datetime="2012-08-21T00:00:00">Tue 21 August 2012</time>            </header>
+        
+        
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href=".././scripting-permission-changes-for-pelican.html">Scripting Permission Changes for Pelican</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2012-08-21T00:00:00">
+                Tue 21 August 2012
+        </abbr>
 
-            <article>
-                <p>I'm not a frequent blogger. To date, this is my second blog post. But this doesn't mean that I don't enjoy toying around with different blogging and publishing software. Last week, I decided to move my Wordpress blog to the static blogging software <a href="http://www.getpelican.com">Pelican</a>. After looking around at the guts of Wordpress, I was turned off by its complexity. I also really really really wanted to be able to edit posts offline and in my own <a href="http://www.sublimetext.com">editor</a>.</p>
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/personal.html">personal</a><a href=".././tag/code.html">code</a><a href=".././tag/bash.html">bash</a><a href=".././tag/geeky.html">geeky</a></p>
+
+
+</footer><!-- /.post-info --><p>I'm not a frequent blogger. To date, this is my second blog post. But this doesn't mean that I don't enjoy toying around with different blogging and publishing software. Last week, I decided to move my Wordpress blog to the static blogging software <a href="http://www.getpelican.com">Pelican</a>. After looking around at the guts of Wordpress, I was turned off by its complexity. I also really really really wanted to be able to edit posts offline and in my own <a href="http://www.sublimetext.com">editor</a>.</p>
 <p>Pelican comes with a pretty robust Makefile that can recompile and upload your website via SSH. I ran into a small issue with my Godaddy account, in which all new files and folders were unreadable because of permission issues. The files needed to be readable by all users on the server and the folders needed to be executable by all users. I wrote a little bash script called <strong>permissions.sh</strong> and uploaded it to my server.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -55,44 +79,43 @@ chmod -R a+r *
 </td></tr></table>
 
 <p>The new "trick" for me was the <strong>find -type d</strong> to only list directories. I then added the following line to my Pelican Makefile under the <strong>ssh_upload</strong> section:</p>
-<div class="codehilite"><pre><span class="n">ssh</span> <span class="err">$</span><span class="p">(</span><span class="n">SSH_USER</span><span class="p">)</span><span class="err">@$</span><span class="p">(</span><span class="n">SSH_HOST</span><span class="p">)</span> <span class="p">.</span><span class="o">/</span><span class="n">permissions</span><span class="p">.</span><span class="n">sh</span>
+<div class="codehilite"><pre><span class="n">ssh</span> $<span class="p">(</span><span class="n">SSH_USER</span><span class="p">)@</span>$<span class="p">(</span><span class="n">SSH_HOST</span><span class="p">)</span> <span class="o">./</span><span class="n">permissions</span><span class="p">.</span><span class="n">sh</span>
 </pre></div>
 
 
 <p>Works great! <s>The only issue is that I have to type my twice, once for the SCP transfer and once for the SSH command. I'll look around and see if there are any ways to store these credentials for a tiny moment in time. If not, typing the password twice is a small price to pay for not having to remotely log into the server every time I make a change.</s></p>
-<p>As soon as I uploaded the last paragraph (dutifully entering my password twice), I decided to search around for a way to authenticate the connection between my computer and the server without the passwords. I found <a href="http://www.linuxproblem.org/art_9.html">this little jewel</a> and it works even better. Vive le unix.</p>            </article>
-                                
-        <footer>
-            <ul>
-                <li>
-                    <a href="http://www.github.com/benmj">
-                        <i class="ss-octocat"></i> Github
-                    </a>
-                </li>
-                <li>
-                    <a href="http://twitter.com/benmjacobs">
-                        <i class="ss-twitter"></i> Twitter
-                    </a>
-                </li>
-                <li>
-                    <a href="http://stackoverflow.com/users/994466/bpmj">
-                        <i class="ss-stackoverflow"></i> Stack Overflow
-                    </a>
-                </li>
-                <li>
-                    <a href="www.linkedin.com/pub/ben-jacobs/34/1b5/525/">
-                        <i class="ss-linkedin"></i> Linked In
-                    </a>
-                </li>
-            </ul>
+<p>As soon as I uploaded the last paragraph (dutifully entering my password twice), I decided to search around for a way to authenticate the connection between my computer and the server without the passwords. I found <a href="http://www.linuxproblem.org/art_9.html">this little jewel</a> and it works even better. Vive le unix.</p>
+                </article>
+                
+                    
+                
+            </aside><!-- /#featured -->
+            
+        
+        
+        
+            </ol><!-- /#posts-list -->
+            
+            </section><!-- /#content -->
+        
+    
 
-            <p>
-                This site was created Using <a href="http://blog.getpelican.com/">Pelican</a>, a static blog generator written in Python. It makes use of <a href="http://subtlepatterns.com/">Subtle Patterns</a> and <a>Symbolset</a>. All text and markup/down was lovingly written in <a href="http://www.sublimetext.com">Sublime Text 2</a>.
-            </p>
-            <p>
-                Copyright 2012-2013 by Ben Jacobs.
-            </p>
-        </footer>
+
+        <section id="extras" class="body">
+        
+        
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+
+
 
 </body>
 </html>

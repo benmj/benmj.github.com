@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Ben by Ben Jacobs - Ben Jacobs</title>
+        <title>A Pelican Blog - Ben Jacobs</title>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
-        <link href="../" type="application/atom+xml" rel="alternate" title="Ben by Ben Jacobs ATOM Feed" />
+        <link rel="stylesheet" href=".././theme/css/main.css" type="text/css" />
         
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
+        
+        
+
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
         <!--[if lte IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="../css/ie.css"/>
-                <script src="../js/IE8.js" type="text/javascript"></script><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie.css"/>
+                <script src=".././js/IE8.js" type="text/javascript"></script><![endif]-->
 
         <!--[if lt IE 7]>
-                <link rel="stylesheet" type="text/css" media="all" href="../css/ie6.css"/><![endif]-->
+                <link rel="stylesheet" type="text/css" media="all" href=".././css/ie6.css"/><![endif]-->
 
 </head>
 
-<body>
-    <h1 role="banner">
-        <a href=".." id="site-title">
-            Ben by Ben Jacobs         </a>
-    </h1>
+<body id="index" class="home">
 
-    <nav role="navigation">
-        <ul>
-            <li><a href="../pages/about.html">about</a></li>
-            <li><a href="../pages/projects.html">projects</a></li>
-            <li><a href="../archives.html">blog</a></li>
-        </ul>
-    </nav>
-
+        <header id="banner" class="body">
+                <h1><a href="../.">A Pelican Blog </a></h1>
+                <nav><ul>
                 
+                
+                
+                    <li><a href=".././pages/about.html">About</a></li>
+                
+                    <li><a href=".././pages/projects.html">Projects</a></li>
+                
+                    <li><a href=".././pages/resume.html">Resumé</a></li>
+                
+                
+                
+                    <li ><a href=".././category/blog.html">blog</a></li>
+                
+                </ul></nav>
+        </header><!-- /#banner -->
+                
+
             
 
-                            <header>
-                    <h1><a href="../a-better-bucket.html" id="page-title">A Better Bucket</a></h1>
-                <time datetime="2012-10-03T00:00:00">Wed 03 October 2012</time>            </header>
+        
+        
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href=".././a-better-bucket.html">A Better Bucket</a></h1> 
+                    <footer class="post-info">
+        <abbr class="published" title="2012-10-03T00:00:00">
+                Wed 03 October 2012
+        </abbr>
 
-            <article>
-                <h2>Or: a fantastic journey of exploration and discovery</h2>
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/code.html">code</a></p>
+
+
+</footer><!-- /.post-info --><h2>Or: a fantastic journey of exploration and discovery</h2>
 <h4>Or: A Single-Post blog entry platform</h4>
 <p>The other day, I was thinking about the gulf in ways to publish content to the web. On the one hand, there's Twitter or Facebook. These both offer easy, yet ephemeral ways, to share content. Facebook has its "notes," but these are ugly and don't seem to be used very much (at least in my circles). At the other extreme, there are blogs. Anyone can set one up, and with all the free templates that are available, it's pretty easy for the average user to come up with something decent looking. The problem with blogs is that unless you're actively cultivating them, they can get stale pretty quickly. I've run across numerous blogs that have a post or two that are years old and then just drop off (I've seen this called "blog rot"). I've also seen people create blogs for the express purpose of posting one or two things. Back in the glorious days of Google Buzz, I had a friend create a blog so he could write one long post that felt too cramped on our feed. What is someone to do if they want write something, quickly publish it, and distribute the link?</p>
 <p>Those in the coder/hacker community are probably familiar with <a href="http://www.pastebucket.com/">PasteBucket</a> and other similar services. These can be used to quickly publish snippets of computer code, and they're mostly used for sharing more than would be appropriate in a forumn or IRC channel. These sites are great for this purpose, but they had some downfalls:</p>
@@ -70,89 +94,338 @@
 <li>Anonymous (because who the hell needs <em>another</em> online account)</li>
 </ol>
 <h2>Process Process Process</h2>
-<p>It had been a little while since I'd coded a web app, and there were some things that I'd been meaning to try out: notabely the <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> and <a href="nodejs.org">NodeJS</a>. </p>
+<p>It had been a little while since I'd coded a web app, and there were some things that I'd been meaning to try out: notabely the <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> and <a href="../static/nodejs.org">NodeJS</a>. </p>
 <p>The last time I wrote a web app, it needed to interact with a database on a server different than the webserver. So, I naturally set about using this architecture (w/o thinking too much). I whipped up some front-end scripts for posting and querying via jQuery AJAX calls. It worked. It was ugly.</p>
 <p>Then, I ran across <a href="http://expressjs.com/">ExpressJS</a>. Ah! A lovely system. I re-worked my app to serve static .html pages in almost all instances and to rely on some of the light-weight templating that comes with Express when it couldn't.</p>
 <p>The result is a good first start, and I'm rather proud of it. An experienced developer would probably smirk at how long it took me to get some of this <em>very</em> basic stuff up and running, but I keep telling myself that I've only been messing with Bootstrap/Node/Express for a few days.</p>
 <h2>Can I see it?</h2>
 <p>I'm afraid I haven't deployed it yet. If you want to try it for yourself, you'll have to download it and run it. If you have command line acces and already have Node installed, you can do the following:</p>
-<div class="codehilite"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="o">:</span><span class="c1">//github.com/benmj/betterpaste.git</span>
+<div class="codehilite"><pre><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">benmj</span><span class="o">/</span><span class="n">betterpaste</span><span class="p">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">betterpaste</span>
 <span class="n">npm</span> <span class="n">install</span>
 <span class="n">node</span> <span class="n">app</span><span class="p">.</span><span class="n">js</span>
 </pre></div>
 
 
-<p>The server will start running on your computer at port 3000. In the near future, I hope to find a place where I can deploy this. I was hoping Heroku would let me, but I see that they discourage relying upon the filesystem for storage. I might look into a light-weight, NoSQL, solution. If you have any recommendations, let me know.</p>            </article>
-                            <section id="article-list">
-                    <h2>Blog posts</h2>
-                    <ol>
-                                    
-
-                 
-            <li><a href="../first-post.html" rel="bookmark" title="Permalink to First Post">First Post</a></li>
+<p>The server will start running on your computer at port 3000. In the near future, I hope to find a place where I can deploy this. I was hoping Heroku would let me, but I see that they discourage relying upon the filesystem for storage. I might look into a light-weight, NoSQL, solution. If you have any recommendations, let me know.</p>
+                </article>
                 
+            </aside><!-- /#featured -->
+            
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+            
+        
+        
+        
+            
 
-                 
-            <li><a href="../laptimer-posted-to-github.html" rel="bookmark" title="Permalink to LapTimer Posted to GitHub">LapTimer Posted to GitHub</a></li>
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././first-post.html" rel="bookmark"
+                           title="Permalink to First Post">First Post</a></h1>
+                </header>
                 
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-06-24T00:00:00">
+                Sun 24 June 2012
+        </abbr>
 
-                 
-            <li><a href="../programming-motherfucker.html" rel="bookmark" title="Permalink to Programming Motherfucker">Programming Motherfucker</a></li>
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/personal.html">personal</a><a href=".././tag/code.html">code</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>I have been inspired… and that led me here.</p>
+<p>I bought this domain a few months ago. I knew I needed a little corner of the net to call my own: a place to write a thought or two or share a cool hack. I aspire to create/contribute to ...</p>
+                <a class="readmore" href=".././first-post.html">read more</a>
                 
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
 
-                 
-            <li><a href="../reusable-lap-timer-for-ios.html" rel="bookmark" title="Permalink to Reusable Lap Timer for iOS">Reusable Lap Timer for iOS</a></li>
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././laptimer-posted-to-github.html" rel="bookmark"
+                           title="Permalink to LapTimer Posted to GitHub">LapTimer Posted to GitHub</a></h1>
+                </header>
                 
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-09-07T00:00:00">
+                Fri 07 September 2012
+        </abbr>
 
-                 
-            <li><a href="../scripting-permission-changes-for-pelican.html" rel="bookmark" title="Permalink to Scripting Permission Changes for Pelican">Scripting Permission Changes for Pelican</a></li>
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/code.html">code</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>I've been hacking around with computers for over a decade, and have always loved the idea of the open source movement. I was running Debian Linux on my personal computer back in sixth grade. (This had its ups and downs, and I still dual booted so I could play ...</p>
+                <a class="readmore" href=".././laptimer-posted-to-github.html">read more</a>
                 
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
 
-                 
-            <li><a href="../simple-is-better-than-complex.html" rel="bookmark" title="Permalink to Simple is Better than Complex">Simple is Better than Complex</a></li>
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././programming-motherfucker.html" rel="bookmark"
+                           title="Permalink to Programming Motherfucker">Programming Motherfucker</a></h1>
+                </header>
                 
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-10-11T00:00:00">
+                Thu 11 October 2012
+        </abbr>
 
-                 
-            <li><a href="../theres-a-hole-in-the-bucket.html" rel="bookmark" title="Permalink to There's a hole in the bucket">There's a hole in the bucket</a></li>
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/code.html">code</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>And now, some words of inspiration from <a href="https://twitter.com/zedshaw" title="@zedshaw">Zed Shaw</a>:</p>
+<blockquote>
+<p>I think I'm going to create the ultimate software development methodology. It'll be revolutionary compared to others because it will focus on the one thing that gets software done. Its entire focus will be this one, glorious, completely useful ...</p></blockquote>
+                <a class="readmore" href=".././programming-motherfucker.html">read more</a>
                 
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
 
-                 
-            <li><a href="../while-reading-the-official-django-tutorial.html" rel="bookmark" title="Permalink to While Reading the Official Django Tutorial">While Reading the Official Django Tutorial</a></li>
-                </ol>
-    </section><!-- #article-list -->
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././reusable-lap-timer-for-ios.html" rel="bookmark"
+                           title="Permalink to Reusable Lap Timer for iOS">Reusable Lap Timer for iOS</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-09-04T00:00:00">
+                Tue 04 September 2012
+        </abbr>
 
-        <footer>
-            <ul>
-                <li>
-                    <a href="http://www.github.com/benmj">
-                        <i class="ss-octocat"></i> Github
-                    </a>
-                </li>
-                <li>
-                    <a href="http://twitter.com/benmjacobs">
-                        <i class="ss-twitter"></i> Twitter
-                    </a>
-                </li>
-                <li>
-                    <a href="http://stackoverflow.com/users/994466/bpmj">
-                        <i class="ss-stackoverflow"></i> Stack Overflow
-                    </a>
-                </li>
-                <li>
-                    <a href="www.linkedin.com/pub/ben-jacobs/34/1b5/525/">
-                        <i class="ss-linkedin"></i> Linked In
-                    </a>
-                </li>
-            </ul>
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/code.html">code</a></p>
 
-            <p>
-                This site was created Using <a href="http://blog.getpelican.com/">Pelican</a>, a static blog generator written in Python. It makes use of <a href="http://subtlepatterns.com/">Subtle Patterns</a> and <a>Symbolset</a>. All text and markup/down was lovingly written in <a href="http://www.sublimetext.com">Sublime Text 2</a>.
-            </p>
-            <p>
-                Copyright 2012-2013 by Ben Jacobs.
-            </p>
-        </footer>
+
+</footer><!-- /.post-info -->
+                <p>The other day I needed to insert a Lap Timer into an existing iPhone application. Being the lazy programmer that I am, I first searched around online to see if anyone had already written a clean, reusable Lap Timer, but there was nothing. iDevices ship with the clock app, which ...</p>
+                <a class="readmore" href=".././reusable-lap-timer-for-ios.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././scripting-permission-changes-for-pelican.html" rel="bookmark"
+                           title="Permalink to Scripting Permission Changes for Pelican">Scripting Permission Changes for Pelican</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-08-21T00:00:00">
+                Tue 21 August 2012
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/personal.html">personal</a><a href=".././tag/code.html">code</a><a href=".././tag/bash.html">bash</a><a href=".././tag/geeky.html">geeky</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>I'm not a frequent blogger. To date, this is my second blog post. But this doesn't mean that I don't enjoy toying around with different blogging and publishing software. Last week, I decided to move my Wordpress blog to the static blogging software <a href="http://www.getpelican.com">Pelican</a>. After looking around ...</p>
+                <a class="readmore" href=".././scripting-permission-changes-for-pelican.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././simple-is-better-than-complex.html" rel="bookmark"
+                           title="Permalink to Simple is Better than Complex">Simple is Better than Complex</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-10-30T00:00:00">
+                Tue 30 October 2012
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/personal.html">personal</a><a href=".././tag/code.html">code</a><a href=".././tag/quotes.html">quotes</a></p>
+
+
+</footer><!-- /.post-info -->
+                <blockquote>
+<p>Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.</p>
+<p>—Brian W. Kernighan</p>
+</blockquote>
+<p>This rang very true for me recently when I was trying to upgrade a ...</p>
+                <a class="readmore" href=".././simple-is-better-than-complex.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././theres-a-hole-in-the-bucket.html" rel="bookmark"
+                           title="Permalink to There's a hole in the bucket">There's a hole in the bucket</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-10-23T00:00:00">
+                Tue 23 October 2012
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/code.html">code</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p>A few weeks ago, I shared about how I wanted to write a better pastebin/pastebucket, one that was beautiful, easy to use, and suitable for text. I pretty quickly mocked one up in NodeJS, and I even had it pseudo-deployed on a server owned by a friend.</p>
+<p>Now, I ...</p>
+                <a class="readmore" href=".././theres-a-hole-in-the-bucket.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            
+
+        
+         
+            
+            <li><article class="hentry">    
+                <header>
+                    <h1><a href=".././while-reading-the-official-django-tutorial.html" rel="bookmark"
+                           title="Permalink to While Reading the Official Django Tutorial">While Reading the Official Django Tutorial</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-10-28T00:00:00">
+                Sun 28 October 2012
+        </abbr>
+
+        
+        <address class="vcard author">
+                By <a class="url fn" href=".././author/ben-jacobs.html">Ben Jacobs</a>
+        </address>
+        
+<p>In <a href=".././category/blog.html">blog</a>. </p>
+<p>tags: <a href=".././tag/code.html">code</a></p>
+
+
+</footer><!-- /.post-info -->
+                <p><em>Nerd joke coming:</em></p>
+<blockquote>
+<p>Because the URL patterns are regular expressions, there really is no limit on what you can do with them. And there's no need to add URL cruft such as .php -- unless you have a sick sense of humor, in which case you can do something like ...</p></blockquote>
+                <a class="readmore" href=".././while-reading-the-official-django-tutorial.html">read more</a>
+                
+                </div><!-- /.entry-content -->
+            </article></li>
+        
+        
+            </ol><!-- /#posts-list -->
+            
+                
+            
+            </section><!-- /#content -->
+        
+    
+
+
+        <section id="extras" class="body">
+        
+        
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+
+
 
 </body>
 </html>
