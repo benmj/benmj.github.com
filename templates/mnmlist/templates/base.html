@@ -22,23 +22,26 @@
 </head>
 
 <body>
-{% include 'github.html' %}
-    <h1 role="banner">
-        <a href="{{ SITEURL }}" id="site-title">
-            {{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}
-        </a>
-    </h1>
+    <div class="page">
+    {% include 'github.html' %}
+        <h1 role="banner">
+            <a href="{{ SITEURL }}" id="site-title">
+                {{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}
+            </a>
+        </h1>
 
-    <nav role="navigation">
-        <ul>
-            <li><a href="{{ SITEURL }}/pages/about.html">about</a></li>
-            <li><a href="{{ SITEURL }}/pages/projects.html">projects</a></li>
-            <li><a href="{{ SITEURL }}/archives.html">blog</a></li>
-        </ul>
-    </nav>
+        <nav role="navigation">
+            <ul>
+                <li><a href="{{ SITEURL }}/pages/about.html">about</a></li>
+                <li><a href="{{ SITEURL }}/pages/projects.html">projects</a></li>
+                <li><a href="{{ SITEURL }}/archives.html">blog</a></li>
+            </ul>
+        </nav>
 
-        {% block content %}
-        {% endblock %}
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
 
         <footer>
             <ul>
@@ -58,7 +61,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="www.linkedin.com/pub/ben-jacobs/34/1b5/525/">
+                    <a href="http://www.linkedin.com/pub/ben-jacobs/34/1b5/525/">
                         <i class="ss-linkedin"></i> Linked In
                     </a>
                 </li>
@@ -72,8 +75,9 @@
             </p>
         </footer>
 
-{% include 'analytics.html' %}
-{% include 'piwik.html' %}
-{% include 'disqus_script.html' %}
-</body>
+    {% include 'analytics.html' %}
+    {% include 'piwik.html' %}
+    {% include 'disqus_script.html' %}
+    </div>
+</body> 
 </html>

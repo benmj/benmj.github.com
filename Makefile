@@ -4,6 +4,7 @@ PELICANOPTS=
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
+# OUTPUTDIR=/home/ben/benmj.github.com
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
@@ -36,10 +37,8 @@ help:
 	@echo '                                                                       '
 
 
-html: clean $(OUTPUTDIR)/index.html
-	@echo 'Done'
-
-$(OUTPUTDIR)/%.html:
+html: 
+	#$(OUTPUTDIR)/%.html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
 clean:
@@ -71,6 +70,6 @@ ftp_upload: publish
 
 github: publish
 	ghp-import $(OUTPUTDIR)
-	git push origin gh-pages
+	git push origin master
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload github

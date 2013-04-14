@@ -1,3 +1,5 @@
+@import url("../font/ss-social-regular.css");
+@import url(http://fonts.googleapis.com/css?family=Arvo:700|PT+Sans:400,700,400italic);
 /*
     Theme Name: mnmlist
     Theme URI: http://mathieu.agopian.info/mnmlist/theme.html
@@ -7,162 +9,214 @@
 
     This theme is uncopyrighted, free, and offered as is.
 */
-@import url("pygment.css");
-/* line 13, ../../compass/src/main.scss */
+/* line 20, ../../compass/src/main.scss */
 body {
   background: #fff;
+  background: url("../images/cream_dust.png");
   color: #333;
-  font: 20px Hoefler Text, bodyfont, serif;
+  font: 20px "PT Sans", bodyfont, serif;
   line-height: 30px;
-  max-width: 30em;
-  margin: 60px 14px 0 64px;
 }
 
 /* line 28, ../../compass/src/main.scss */
+.page {
+  *zoom: 1;
+  max-width: 35em;
+  _width: 35em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, ../../../../../../../../var/lib/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.page:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 39, ../../compass/src/main.scss */
 h1 {
   color: #333333;
-  font-family: Helvetica, sans-serif;
+  font-family: "Arvo", serif;
   font-size: 1.5em;
   font-weight: normal;
   margin-bottom: 0;
 }
 
-/* line 34, ../../compass/src/main.scss */
+/* line 45, ../../compass/src/main.scss */
 h2 {
   color: #666666;
-  font-family: Helvetica, sans-serif;
+  font-family: "Arvo", serif;
   font-size: 1.3em;
 }
 
-/* line 38, ../../compass/src/main.scss */
+/* line 49, ../../compass/src/main.scss */
 h3 {
   color: #666666;
-  font-family: Helvetica, sans-serif;
+  font-family: "Arvo", serif;
   font-size: 1em;
 }
 
-/* line 42, ../../compass/src/main.scss */
+/* line 53, ../../compass/src/main.scss */
 h4 {
   color: #666666;
-  font-family: Helvetica, sans-serif;
+  font-family: "Arvo", serif;
   font-size: 0.9em;
 }
 
-/* line 46, ../../compass/src/main.scss */
-time {
-  color: #c0c0c0;
-  font-size: 50%;
+/* line 58, ../../compass/src/main.scss */
+nav ul {
+  list-style: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+/* line 63, ../../compass/src/main.scss */
+nav li {
+  display: inline;
+  margin-left: 20px;
+}
+/* line 67, ../../compass/src/main.scss */
+nav a {
+  border-bottom: none;
 }
 
-/* line 51, ../../compass/src/main.scss */
+/* line 72, ../../compass/src/main.scss */
+time {
+  color: #c0c0c0;
+}
+
+/* line 76, ../../compass/src/main.scss */
 img {
   border: none;
 }
 
-/* line 55, ../../compass/src/main.scss */
+/* line 80, ../../compass/src/main.scss */
 blockquote {
-  border-left: 1px solid #A5ABAB;
+  border-left: 4px solid #a5abab;
   margin: 0px;
   padding: 0 12px 0 12px;
 }
 
-/* line 61, ../../compass/src/main.scss */
+/* line 86, ../../compass/src/main.scss */
 p {
-  line-height: 30px;
-  margin: 30px auto;
+  line-height: 25px;
+  margin: 25px auto;
   text-indent: 0px;
 }
-/* line 65, ../../compass/src/main.scss */
+/* line 90, ../../compass/src/main.scss */
 p.caption {
   font-size: 80%;
   margin-top: 0;
 }
 
-/* line 71, ../../compass/src/main.scss */
+/* line 96, ../../compass/src/main.scss */
 a {
-  border-bottom: #999 1px solid;
+  border-bottom: #999999 1px solid;
   color: #303030;
   text-decoration: none;
 }
-/* line 75, ../../compass/src/main.scss */
+/* line 100, ../../compass/src/main.scss */
 a:hover {
   color: #999;
 }
 
-/* line 78, ../../compass/src/main.scss */
-ul, ol {
-  padding: .5em 0em 1em 3.2em;
-}
-/* line 80, ../../compass/src/main.scss */
+/* line 105, ../../compass/src/main.scss */
 ul li, ol li {
   line-height: 30px;
   padding: 6px 0 0 0;
 }
 
-/* line 86, ../../compass/src/main.scss */
+/* line 111, ../../compass/src/main.scss */
 strong {
   color: #555555;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-weight: bold;
 }
 
-/* line 92, ../../compass/src/main.scss */
+/* line 117, ../../compass/src/main.scss */
 tt, pre {
   background-color: #fafafa;
   font-family: Inconsolata, Monaco, monospace;
   line-height: 1.2em;
 }
 
-/* line 98, ../../compass/src/main.scss */
+/* line 123, ../../compass/src/main.scss */
 pre {
   font-size: 0.8em;
   overflow: auto;
   padding: 10px;
 }
 
-/* line 104, ../../compass/src/main.scss */
+/* line 129, ../../compass/src/main.scss */
 header {
   padding-bottom: 20px;
 }
-/* line 106, ../../compass/src/main.scss */
+/* line 131, ../../compass/src/main.scss */
 header a {
   border-bottom: none;
 }
-/* line 108, ../../compass/src/main.scss */
+/* line 133, ../../compass/src/main.scss */
 header a#page-title {
   font-weight: bold;
 }
 
-/* line 112, ../../compass/src/main.scss */
+/* line 137, ../../compass/src/main.scss */
 #article-list {
   margin-top: 100px;
 }
-/* line 114, ../../compass/src/main.scss */
+/* line 139, ../../compass/src/main.scss */
 #article-list ol li {
   line-height: 1.2em;
   list-style-type: none;
   padding-bottom: 10px;
 }
 
-/* line 121, ../../compass/src/main.scss */
+/* line 146, ../../compass/src/main.scss */
 footer {
-  background: #fff;
   color: #666;
-  font-family: helvetica, sans-serif;
-  font-size: 13px;
-  letter-spacing: 4px;
-  margin-left: 20px;
+  font-size: 16px;
+  padding: 25px;
+  border-radius: 10px;
 }
-/* line 128, ../../compass/src/main.scss */
+/* line 152, ../../compass/src/main.scss */
 footer a {
   border-bottom: none;
-  color: #c0c0c0;
+  color: #333;
 }
-/* line 132, ../../compass/src/main.scss */
+/* line 156, ../../compass/src/main.scss */
+footer ul {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+/* line 160, ../../compass/src/main.scss */
 footer li {
   display: inline;
+  padding-left: 25px;
 }
-/* line 135, ../../compass/src/main.scss */
+/* line 163, ../../compass/src/main.scss */
+footer li a {
+  color: #c0c0c0;
+}
+/* line 165, ../../compass/src/main.scss */
+footer li a:hover {
+  color: #666;
+  font-size: 115%;
+}
+/* line 171, ../../compass/src/main.scss */
 footer p {
-  text-align: right;
+  margin-top: 10px;
+}
+
+/* line 182, ../../compass/src/main.scss */
+#site-title {
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* line 188, ../../compass/src/main.scss */
+#about_image {
+  float: left;
+  padding: 0 25px 25px;
 }

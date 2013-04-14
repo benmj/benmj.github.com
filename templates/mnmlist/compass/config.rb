@@ -1,8 +1,8 @@
 # Require any additional compass plugins here.
 # Set this to the root of your project when deployed:
 
-# css_dir = "../static/css"
-css_dir = "../../../output/theme/css"
+ css_dir = "../static/css"
+#css_dir = "../../../output/theme/css"
 
 
 
