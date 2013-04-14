@@ -70,6 +70,7 @@ ftp_upload: publish
 
 github: publish
 	ghp-import $(OUTPUTDIR)
-	git push origin master
+	# git push origin master
+	git push git@github.com:benmj/benmj.github.com.git gh-pages:master --force
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload github
