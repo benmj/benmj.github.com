@@ -69,6 +69,7 @@ ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
 
 github: publish
+	cp CNAME $(OUTPUTDIR)
 	ghp-import $(OUTPUTDIR)
 	# git push origin master
 	git push git@github.com:benmj/benmj.github.com.git gh-pages:master --force
